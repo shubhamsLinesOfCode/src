@@ -1,0 +1,233 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background: linear-gradient(135deg, #ec9ebc, #a2c5d2, #a3ccc2);
+    background-size: 400% 400%;
+    animation: gradient 9s ease-in infinite;
+    margin: 2px
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+header span:nth-child(2){
+    display: block;
+}
+
+section h2{
+    padding: 7px 5px 5px 5px;
+    margin-top: 12px;
+}
+
+
+section:nth-of-type(2) span{
+    margin-bottom: 10px;
+}
+
+fieldset {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.socialMedia ul li{
+    list-style: none;
+}
+.socialMedia ul li a{
+    text-decoration: none;
+}
+
+fieldset button {
+    margin-top: 10px;
+}
+
+nav ul li {
+    list-style: none;
+}
+nav ul li a{
+    text-decoration: none;
+}
+
+nav ul:nth-of-type(1){
+    background: bisque;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+nav {
+    position: fixed;
+    z-index: 999;
+    top: 0; /* To make the navBar fixed at the top always while scrolling */
+    background-color: bisque; /* Background color ensures the navbar is visible when scrolling */
+    padding: 1px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+main section {
+    padding: 6px 9px 9px 9px;
+}
+
+nav a:active {
+    color: crimson; /* Color change when clicked */
+  }
+  
+  header div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  header h1{
+    text-shadow: 7px 5px 3.75px rgb(45, 43, 14);
+    font-size: 3em;
+  }
+
+  header div span {
+    font-size: 1.15em;}
+
+    .footer-content {
+        margin-top: 4px;
+        border-top: 1px solid grey;
+        display: flex;
+        background-color: bisque;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer-content p {
+        margin: 7px 0 4px 0;
+        font-size: 15px;
+    }
+
+.gridContainer {
+    @apply grid grid-cols-1 md:grid-cols-2 
+}
+
+.boxShadow {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Custom class for hover translation */
+ .custom-hover-translate {
+    @apply transform transition duration-300 ease-linear;
+  }
+  
+  .custom-hover-translate:hover {
+    @apply translate-x-1 -translate-y-3 bg-zinc-200;
+  } 
+
+  .custom-hover-translate2{
+    @apply transform transition duration-300 ease-linear;
+  }
+
+  .custom-hover-translate2:hover{
+    @apply -translate-x-1 -translate-y-3 bg-zinc-200;
+  }
+
+  .textDecoration{
+    @apply decoration-solid capitalize underline text-xl font-semibold mb-2
+  }
+  .textDecoration2{
+    @apply text-base mb-2 text-justify
+  }
+
+  .animatedTitle, .animatedTitle2{
+    animation: glitch 1s linear infinite;
+    color: #F2EED7;
+  }
+  
+  @keyframes glitch{
+    2%,64%{
+      transform: translate(2px,0) skew(0deg);
+    }
+    4%,60%{
+      transform: translate(-2px,0) skew(0deg);
+    }
+    62%{
+      transform: translate(0,0) skew(5deg); 
+    }
+  }
+  
+  .animatedTitle:before,
+  .animatedTitle:after{
+    content: attr(title);
+    position: absolute;
+    left: 0;
+  }
+  .animatedTitle2:before,
+  .animatedTitle2:after{
+    content: attr(title);
+    position: absolute;
+    left: 0;
+  }
+  
+  .animatedTitle:before, .animatedTitle2:before{
+    animation: glitchTop 1s linear infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  }
+  
+  @keyframes glitchTop{
+    2%,64%{
+      transform: translate(2px,-2px);
+    }
+    4%,60%{
+      transform: translate(-2px,2px);
+    }
+    62%{
+      transform: translate(13px,-1px) skew(-13deg); 
+    }
+  }
+  
+  .animatedTitle:after, .animatedTitle2::after{
+    animation: glitchBotom 1.5s linear infinite;
+    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  }
+
+  @media (max-width: 420px) and (min-width: 144px) {
+    .animatedTitle, .animatedTitle2 {
+      font-size: 2.15rem;
+    }}
+  
+  @keyframes glitchBotom{
+    2%,64%{
+      transform: translate(-2px,0);
+    }
+    4%,60%{
+      transform: translate(-2px,0);
+    }
+    62%{
+      transform: translate(-22px,5px) skew(21deg); 
+    }
+  }
+
+  .btnn{
+    border: solid 1px black;
+  }
+
+  .ulClass{
+    @apply flex justify-evenly md:justify-end md:gap-16 md:pr-2;
+  }
+
+  .liStyle{
+    @apply list-disc;
+  }
+
+  @media (max-width:280px) {
+    .flexMed{
+        flex-direction: column;
+    }
+  }
